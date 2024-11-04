@@ -15,7 +15,7 @@
         app:boxStrokeColor="@color/yellow"
         app:hintTextColor="@color/yellow"
         android:layout_gravity="center"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="350dp"
         android:gravity="center"
 
 
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:textStyle="italic"
             android:hint="Enter Your Name"
-
+            android:textColor="@color/black"
             android:drawableStart="@drawable/baseline_android_24"
             android:drawablePadding="10dp"
             android:textColorHint="@color/white"
@@ -52,13 +52,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:textStyle="italic"
             android:drawableStart="@drawable/baseline_attach_email_24"
             android:drawablePadding="10dp"
 
             android:hint="Enter Your Mail"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:id="@+id/etMail"
             />
 
@@ -69,23 +70,29 @@
         android:layout_height="wrap_content"
         app:boxStrokeColor="@color/yellow"
         app:hintTextColor="@color/yellow"
+        android:inputType="textPassword"
         android:layout_gravity="center"
         app:passwordToggleEnabled="true"
-
+        app:passwordToggleTint="@color/black"
         android:gravity="center"
+        app:endIconTint="@color/black"
 
 
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:layout_height="wrap_content"
             android:textStyle="italic"
             android:hint="Enter Your Password"
+            app:endIconTint="@color/black"
+
 
             android:drawableStart="@drawable/baseline_back_hand_24"
 
             android:drawablePadding="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/white"
             android:id="@+id/etPassword"
             />
@@ -94,6 +101,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         app:boxStrokeColor="@color/yellow"
         app:hintTextColor="@color/yellow"
         android:layout_gravity="center"
@@ -108,9 +116,11 @@
             android:layout_height="wrap_content"
             android:textStyle="italic"
             android:drawableStart="@drawable/baseline_account_box_24"
-            android:padding="10dp"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
             android:hint="Create User Name"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:id="@+id/etUserName"
 
             />
@@ -124,6 +134,16 @@
         android:layout_margin="20dp"
         android:background="@color/yellow"
         android:layout_gravity="center"
+        android:textColor="@color/white"
 
         android:text="Sign Up" />
+
+    <TextView
+        android:id="@+id/tvDirectLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:text="Already a User? Login" />
 </LinearLayout>

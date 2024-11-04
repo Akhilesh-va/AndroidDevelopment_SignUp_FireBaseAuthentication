@@ -1,7 +1,9 @@
 package com.example.signupusingfirebase
 
 import User
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val etEmail=findViewById<AppCompatEditText>(R.id.etMail)
         val etUserName=findViewById<AppCompatEditText>(R.id.etUserName)
         val etPassword=findViewById<AppCompatEditText>(R.id.etPassword)
+        val tvDirectLogin=findViewById<TextView>(R.id.tvDirectLogin)
         btnSignUp.setOnClickListener{
             val name = etName.text.toString()
             val email = etEmail.text.toString()
@@ -36,13 +39,18 @@ class MainActivity : AppCompatActivity() {
             etPassword.text?.clear()
             etUserName.text?.clear()
             database= FirebaseDatabase.getInstance().getReference("Users")
-            database.child(name).setValue(user).addOnSuccessListener {
+            database.child(userName).setValue(user).addOnSuccessListener {
                 Toast.makeText(this,"User Registered", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
 
         }
+        tvDirectLogin.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
